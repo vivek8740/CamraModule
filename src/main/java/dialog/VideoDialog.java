@@ -1,10 +1,11 @@
-package camera;
+package dialog;
 
+import camera.Application;
 import enums.EnumOptions;
 
 public class VideoDialog extends Dialog {
 
-	VideoDialog() {
+	public VideoDialog() {
 		screen = EnumOptions.VIDEO_IDLE;
 		onCreate();
 	}

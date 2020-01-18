@@ -1,6 +1,7 @@
 /**/
-package camera;
+package dialog;
 
+import camera.View;
 import enums.EnumOptions;
 
 public class Dialog {

@@ -2,13 +2,15 @@ package camera;
 
 import java.util.Scanner;
 
+import dialog.Dialog;
+import dialog.VideoDialog;
 import driver.Driver;
 import enums.EnumOptions;
 
 public class Application{
 	Dialog dialog;
 	static Application application;
-	static Driver driver;
+	public static Driver driver;
 	Scanner scan = new Scanner(System.in);
 
 	// Static block to initialize Driver class.
