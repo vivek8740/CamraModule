@@ -3,14 +3,14 @@ package camera;
 import java.util.Scanner;
 
 import dialog.Dialog;
-import dialog.VideoDialog;
 import driver.Driver;
 import enums.EnumOptions;
 
-public class Application{
-	Dialog dialog;
+public class Application {
+	static Dialog dialog;
 	static Application application;
 	public static Driver driver;
+	//Scaner object to take user Input.
 	Scanner scan = new Scanner(System.in);
 
 	// Static block to initialize Driver class.
@@ -28,11 +28,13 @@ public class Application{
 
 	// Init method to initialize the application.
 	public void init() {
+
+		driver.currentMode = getCurrentMode();
 		driver.currentOrientation = getCurrentOrientation();
-		dialog = new VideoDialog();
+		dialog = new Dialog(driver.currentMode);
 	}
 
-	//Method to map current Orientation Enum
+	// Method to map current Orientation Enum
 	public EnumOptions getCurrentOrientation() {
 		EnumOptions currentOrientation = EnumOptions.UNKNOWN;
 		System.out.println("Press 1 for Landscape and 2 for Portrait:");
@@ -49,6 +51,24 @@ public class Application{
 		}
 
 		return currentOrientation;
+	}
+
+	// Method to map current Camera Mode Enum
+	public EnumOptions getCurrentMode() {
+		EnumOptions currentMode = EnumOptions.UNKNOWN;
+		System.out.println("Press 1 for Video and 2 for Photo:");
+		switch (scan.nextInt()) {
+		case 1:
+			currentMode = EnumOptions.VIDEO_IDLE;
+			break;
+		case 2:
+			currentMode = EnumOptions.PHOTO_IDLE;
+			break;
+		default:
+			currentMode = EnumOptions.VIDEO_IDLE;
+			break;
+		}
+		return currentMode;
 	}
 
 }

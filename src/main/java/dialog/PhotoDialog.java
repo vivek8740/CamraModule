@@ -2,16 +2,15 @@ package dialog;
 
 import camera.Application;
 
-public class VideoDialog extends Dialog {
+public class PhotoDialog extends Dialog {
 
-	//Constructor.
-	public VideoDialog() {
+	//Constructor
+	public PhotoDialog() {
 		onCreate();
 	}
-	
-	//OnCreate method to initialize object.
+
+	@Override
 	public void onCreate() {
 		view = Application.driver.getClassObject();
 	}
-
 }

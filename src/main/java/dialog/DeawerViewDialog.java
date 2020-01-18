@@ -1,5 +1,5 @@
 package dialog;
 
-public class DeawerViewDialog {
+public class DeawerViewDialog extends Dialog{
 
 }
